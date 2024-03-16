@@ -86,6 +86,7 @@ DATABASES = {
         'NAME': 'realestate_db',
         'USER': 'postgres',
         'PASSWORD': 'sanantonio021',
+        'HOST': 'localhost',
     }
 }
 
