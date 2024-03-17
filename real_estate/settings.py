@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#vom(t6w3*d@+&^8a-#(%-uj5)$x*d2ark)1pi@7c+yp%o9wx1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-real-estate.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -131,6 +132,7 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'real_estate/static') 
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # MEDIA FOLDER
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
