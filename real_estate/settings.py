@@ -82,12 +82,11 @@ WSGI_APPLICATION = 'real_estate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'realestate_db',
         'USER': 'postgres',
         'PASSWORD': 'sanantonio021',
-        'HOST': 'localhost',
-        
+        'HOST': 'localhost', 
     }
 }
 
