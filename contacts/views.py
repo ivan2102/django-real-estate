@@ -22,20 +22,20 @@ def contact(request):
 
             if contacted:
                 messages.error(request, 'You have already made an inquiry for this listing')
-                return redirect('/listings/'+listing_id)
+                return redirect('/listings/' + listing_id)
 
 
 
         contact = Contacts(listing_id=listing_id, listing=listing, name=name, email=email, phone=phone, message=message, user_id=user_id)
         contact.save()
 
-        send_mail(
-            'Contact for Property Listing',
-            'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info',
-            'iradisavljevic168@gmail.com',
-            [realtor_email, 'iradisavljevic168@gmail.com'],
-            fail_silently=False
-        )
-        messages.success(request, 'Your request has been submitted, please check your email address')
+        #send_mail(
+           # 'Contact for Property Listing',
+           # 'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info',
+           # 'iradisavljevic168@gmail.com',
+           # [realtor_email, 'iradisavljevic168@gmail.com'],
+           # fail_silently=False
+       # )
+        messages.success(request, 'Your request has been submitted, a realtor will contact you soon')
         return redirect('/listings/'+listing_id)
     return render(request, 'listings/listing.html')
